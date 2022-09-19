@@ -57,3 +57,13 @@ def heapSort(LIST):
         LIST[i], LIST[0] = LIST[0], LIST[i]  # swaps values
         heapify(LIST, i, 0)
 
+
+if __name__ == "__main__":
+    TIMES = []
+    for i in range(30):
+        NUMBERS = getRandomList(10000)
+        START = getTime()
+        heapSort(NUMBERS)
+        END = getTime()
+        TIMES.append(END - START)
+    print(getAverage(TIMES))
